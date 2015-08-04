@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>File is Uploaded</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/react.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/JSXTransformer.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <link href='http://fonts.googleapis.com/css?family=Roboto:700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="/styles.css">
+</head>
+<body>
+  <div id="content"></div>
+  <div id"btn"></div>
+  <script type="text/jsx">
+  var CommentBox = React.createClass({
+    render: function() {
+      return (
+        <div className="commentBox">
+        Your file is uploaded!
+        <GoHome />
+        </div>
+        );
+    }
+
+  });
+  var GoHome = React.createClass({
+    render: function() {
+      return (
+        <a href="/" className="button">Return Home</a>
+        );
+    }
+  });
+
+  React.render(
+    <CommentBox />, 
+    document.getElementById('content')
+    );
+      // Your code here
+      </script>
+</body>
+</html>
