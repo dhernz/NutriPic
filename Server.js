@@ -2,7 +2,10 @@
 var express = require('express');
 var multer = require('multer');
 var app = express();
+var path = require('path');
 var done = false;
+
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(multer({
     dest: './uploads/',
@@ -19,11 +22,12 @@ app.use(multer({
 }));
 
 app.get('/', function (req, res) {
-    res.sendfile('index.html');
+    res.sendFile(path.join(__dirname, './public', 'index.html'))
 });
 app.get('/fileupload',function(req,res){
     console.log('Inside of get fileUpload');
-    res.sendfile('fileUpload.html');
+    res.sendFile(path.join(__dirname, './public', 'fileupload.html'))
+
 })
 
 app.post('/api/photo', function (req, res) {
